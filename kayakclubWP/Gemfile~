@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
-
+<<<<<<< HEAD
 #Mark's gemfile
+=======
 # Here is a comment 
-
+>>>>>>> 01308d900e4f8f02a2a42244d9c7c8bd13971d1b
 gem 'rails', '3.2.14'
 
 # Jacob Comment
