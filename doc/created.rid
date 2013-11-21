@@ -1,0 +1,25 @@
+Wed, 20 Nov 2013 16:51:15 -0800
+./kayakclub/Rakefile	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/config/initializers/secret_token.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/config/initializers/wrap_parameters.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/config/initializers/inflections.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/config/initializers/backtrace_silencers.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/config/initializers/mime_types.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/config/initializers/session_store.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/config/environments/development.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/config/environments/test.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/config/environments/production.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/config/boot.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/config/application.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/config/environment.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/config/routes.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/script/rails	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/test/test_helper.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/test/performance/browsing_test.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/db/seeds.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/Gemfile	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/README.rdoc	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/app/helpers/application_helper.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/app/controllers/application_controller.rb	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/doc/README_FOR_APP	Wed, 20 Nov 2013 16:49:35 -0800
+./kayakclub/public/robots.txt	Wed, 20 Nov 2013 16:49:35 -0800
