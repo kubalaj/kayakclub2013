@@ -1,12 +1,7 @@
 source 'https://rubygems.org'
-<<<<<<< HEAD
-#Mark's gemfile
-=======
-# Here is a comment 
->>>>>>> 01308d900e4f8f02a2a42244d9c7c8bd13971d1b
+
 gem 'rails', '3.2.14'
 
-# Jacob Comment
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -24,7 +19,9 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
+group :development, :test do
+  gem 'rspec-rails'
+end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
