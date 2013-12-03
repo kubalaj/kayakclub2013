@@ -1,8 +1,8 @@
 Feature: Display logins 
 	 
-	  As a internet browser
-	  So that I can use secured features
-	  I want to be identified by a username and password
+	 As a user 
+	 So that I can login 
+	 I want to login with my chosen option
 
 Scenario: Not Logged in 
 	  When I click login 
