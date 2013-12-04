@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+      // BOULDER CREEK
+    $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D06730200%26format%3Djson&callback=?',function(result){
+    result = eval(result);
+    $("div").append(result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'] + " ");
+   
+    $("div").append(result['contents']['value']['timeSeries'][0]['variable']['variableName'] + " ");
+   
+    $("div").append(result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'] + "<br> ");
+    });
+    // ARKANSAS RIVER
+    $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D07091200%26format%3Djson&callback=?',function(result){
+    result = eval(result);
+    $("div").append(result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'] + " ");
+   
+    $("div").append(result['contents']['value']['timeSeries'][0]['variable']['variableName'] + " ");
+   
+    $("div").append(result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'] + "<br> ");
+    });
+    // CLEAR CREEK
+    $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D06719505%26format%3Djson&callback=?',function(result){
+    result = eval(result);
+    $("div").append(result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'] + " ");
+   
+    $("div").append(result['contents']['value']['timeSeries'][0]['variable']['variableName'] + " ");
+   
+    $("div").append(result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'] + "<br> ");
+    });
+    // GORE CANYON
+    $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D09058000%26format%3Djson&callback=?',function(result){
+    result = eval(result);
+    $("div").append(result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'] + " ");
+   
+    $("div").append(result['contents']['value']['timeSeries'][1]['variable']['variableName'] + " ");
+   
+    $("div").append(result['contents']['value']['timeSeries'][1]['values'][0]['value'][0]['value'] + "<br> ");
+    });
+    // POUDRE
+    $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D06752260%26format%3Djson&callback=?',function(result){
+    result = eval(result);
+    $("div").append(result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'] + " ");
+   
+    $("div").append(result['contents']['value']['timeSeries'][0]['variable']['variableName'] + " ");
+   
+    $("div").append(result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'] + "<br> ");
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<button>Get JSON data</button>
+<div></div>
+
+</body>
+</html>
