@@ -7,38 +7,86 @@
 $(document).ready(function(){
   $("button").click(function(){
 
-    var river = new Array();
 
-    // BOULDER CREEK
-    $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D06730200%26format%3Djson&callback=?',callbackFuncWithData);
+    // BOULDERCREEK
+    $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D06730200%26format%3Djson&callback=?',callbackFuncWithDataBoulder);
     // ARKANSAS RIVER
-    $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D07091200%26format%3Djson&callback=?',callbackFuncWithData);
+    $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D07091200%26format%3Djson&callback=?',callbackFuncWithDataArkansas);
     // CLEAR CREEK
-    $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D06719505%26format%3Djson&callback=?',callbackFuncWithData);
+    $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D06719505%26format%3Djson&callback=?',callbackFuncWithDataClearCreek);
     // GORE CANYON
-    $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D09058000%26format%3Djson&callback=?',callbackFuncWithDataOne);
+    $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D09058000%26format%3Djson&callback=?',callbackFuncWithDataGoreCanyon);
     // POUDRE
-    $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D06752260%26format%3Djson&callback=?',callbackFuncWithData);
+    $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D06752260%26format%3Djson&callback=?',callbackFuncWithDataPoudre);
 
-
-    function callbackFuncWithData(data)
+    var river = new Array();
+    function callbackFuncWithDataBoulder(data)
     {
         result = eval(data);
-        river[0] = result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'];
-        river[1] = result['contents']['value']['timeSeries'][0]['variable']['variableName'];
-        river[2] = result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'];
-        $("#flows").append(river[0]+river[1]+river[2]+ "<br> ");/**/  
+        river[0] = "Boulder Creek" //result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'];
+        river[1] = result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'];
+        river[2] = "cfs"; //result['contents']['value']['timeSeries'][0]['variable']['variableName'];
+        $("#content1").append(river[0] + " " + river[1] + " " + river[2] + "<br> ");/**/  
+        if(river[1] == -999999){
+            $("#content1").remove();
+        }
+    }
+    function callbackFuncWithDataArkansas(data)
+    {
+        result = eval(data);
+        river[0] = "Arkansas River" //result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'];
+        river[1] = result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'];
+        river[2] = "cfs"; //result['contents']['value']['timeSeries'][0]['variable']['variableName'];
+        $("#content2").append(river[0] + " " + river[1] + " " + river[2] + "<br> ");/**/  
+        if(river[1] == -999999){
+            $("#content2").remove();
+        }
+    }
+    function callbackFuncWithDataClearCreek(data)
+    {
+        result = eval(data);
+        river[0] = "Clear Creek" //result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'];
+        river[1] = result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'];
+        river[2] =  "cfs"; //result['contents']['value']['timeSeries'][0]['variable']['variableName'];
+        $("#content3").append(river[0] + " " + river[1] + " " + river[2] + "<br> ");/**/  
+        if(river[1] == -999999){
+            $("#content3").remove();
+        }
     }
     // Gore Canyon's returned json is a wee bit different so has its own callback Function.
-    function callbackFuncWithDataOne(data)
+    function callbackFuncWithDataGoreCanyon(data)
     {
         result = eval(data);
-        river[0] = result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'];
-        river[1] = result['contents']['value']['timeSeries'][1]['variable']['variableName'];
-        river[2] = result['contents']['value']['timeSeries'][1]['values'][0]['value'][0]['value'];
-        $("#flows").append(river[0]+river[1]+river[2]+ "<br> ");/**/  
+        river[0] = "Gore Canyon" //result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'];
+        river[1] = result['contents']['value']['timeSeries'][1]['values'][0]['value'][0]['value'];
+        river[2] =  "cfs"; //result['contents']['value']['timeSeries'][1]['variable']['variableName'];
+        $("#content4").append(river[0] + " " + river[1] + " " + river[2] + "<br> ");/**/  
+        if(river[1] == -999999){
+            $("#content4").remove();
+        }
+    }
+    function callbackFuncWithDataPoudre(data)
+    {
+        result = eval(data);
+        river[0] = "Poudre at Narrows"//result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'];
+        river[1] = result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'];
+        river[2] =  "cfs"; //result['contents']['value']['timeSeries'][0]['variable']['variableName'];
+        $("#content5").append(river[0] + " " + river[1] + " " + river[2] + "<br> ");/**/  
+        if(river[1] == -999999){
+            $("#content5").remove();
+        }
     }
 
+    i = 0;
+    (function cycle() { 
+        var divs = $('div[id^="content"]').hide();
+        divs.eq(i).fadeIn(400)
+                  .delay(5000)
+                  .fadeOut(400, cycle);
+
+        i = ++i % divs.length; // increment i, 
+                               //   and reset to 0 when it equals divs.length
+    })();
 
   });
 });
@@ -50,7 +98,12 @@ $(document).ready(function(){
 <body>
 
 <button>Get JSON data</button>
-<div id="flows"></div>
+<div id="flows"><div id="content1"></div>
+                <div id="content2"></div>
+                <div id="content3"></div>
+                <div id="content4"></div>
+                <div id="content5"></div>
+            </div>
 
 </body>
 </html>
