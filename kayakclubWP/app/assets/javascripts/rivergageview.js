@@ -1,9 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-</script>
-<script>
+// This file grabs the river data
+
+// It grabs using waterservices.usgs.gov's json url retriever, and uses anyorigin.com to act as the mirror site to get past origin errors.
+// It uses getJSON then a callback function for each river respectively. 
+// river[0] is the name, but we hard coded it to get a more consise name.
+// river[1] is the river flow
+// river[2] is the cfs, the comment is the way to pull the labeling from the site which is a bit more than cfs.
+
+// It then puts them in their respective divs and cycles through them.
+
+// Created by Jacob Wolniewicz
+
+
+
+
 $(document).ready(function(){
 
 
@@ -76,6 +85,8 @@ $(document).ready(function(){
         }
     }
 
+
+    // Cycle through them
     i = 0;
     (function cycle() { 
         var divs = $('div[id^="content"]').hide();
@@ -87,17 +98,3 @@ $(document).ready(function(){
     })();
 
 });
-</script>
-</head>
-
-<body>
-
-<div id="flows"><div id="content1"></div>
-                <div id="content2"></div>
-                <div id="content3"></div>
-                <div id="content4"></div>
-                <div id="content5"></div>
-            </div>
-
-</body>
-</html>
