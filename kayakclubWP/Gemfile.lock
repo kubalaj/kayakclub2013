@@ -82,9 +82,13 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.1)
     mime-types (1.25.1)
+    mocha (0.14.0)
+      metaclass (~> 0.0.1)
     multi_json (1.8.2)
     multi_test (0.0.2)
+    nifty-generators (0.4.6)
     nokogiri (1.5.5)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -163,6 +167,9 @@ DEPENDENCIES
   cucumber-rails-training-wheels
   haml
   jquery-rails
+  mocha
+  nifty-generators (>= 0.4.0)
+  nokogiri (~> 1.5.5)
   rails (= 3.2.14)
   rspec-rails
   sass-rails (~> 3.2.3)

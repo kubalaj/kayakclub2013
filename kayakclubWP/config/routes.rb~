@@ -8,7 +8,7 @@ Kayakclub::Application.routes.draw do
 
   match 'user/edit' => 'users#edit', :as => :edit_current_user
   
-  match 'forums' => 'forums#index' 
+  #match 'forums' => 'forums#index' 
 
   match 'signup' => 'users#new', :as => :signup
 
