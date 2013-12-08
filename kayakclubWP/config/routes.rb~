@@ -1,5 +1,9 @@
 Kayakclub::Application.routes.draw do
-  root :to => 'forums#index'
+
+	root :to => 'welcome#index'
+
+get "forums/index"
+  #root :to => 'forums#index'
   resources :posts
 
   resources :topics
@@ -7,8 +11,7 @@ Kayakclub::Application.routes.draw do
   resources :forums
 
   match 'user/edit' => 'users#edit', :as => :edit_current_user
-  
-  match 'forums' => 'forums#index' 
+   
 
   match 'signup' => 'users#new', :as => :signup
 

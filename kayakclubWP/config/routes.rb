@@ -1,5 +1,9 @@
 Kayakclub::Application.routes.draw do
-  root :to => 'forums#index'
+
+	root :to => 'welcome#index'
+
+get "forums/index"
+  #root :to => 'forums#index'
   resources :posts
 
   resources :topics
