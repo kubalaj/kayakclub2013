@@ -9,7 +9,6 @@ $(document).ready(function(){
 
     var river = new Array();
 
-
     // BOULDER CREEK
     $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D06730200%26format%3Djson&callback=?',callbackFuncWithData);
     // ARKANSAS RIVER
@@ -28,15 +27,16 @@ $(document).ready(function(){
         river[0] = result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'];
         river[1] = result['contents']['value']['timeSeries'][0]['variable']['variableName'];
         river[2] = result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'];
-        $("div").append(river[0]+river[1]+river[2]+ "<br> ");/**/  
+        $("#flows").append(river[0]+river[1]+river[2]+ "<br> ");/**/  
     }
+    // Gore Canyon's returned json is a wee bit different so has its own callback Function.
     function callbackFuncWithDataOne(data)
     {
         result = eval(data);
         river[0] = result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'];
         river[1] = result['contents']['value']['timeSeries'][1]['variable']['variableName'];
         river[2] = result['contents']['value']['timeSeries'][1]['values'][0]['value'][0]['value'];
-        $("div").append(river[0]+river[1]+river[2]+ "<br> ");/**/  
+        $("#flows").append(river[0]+river[1]+river[2]+ "<br> ");/**/  
     }
 
 
@@ -50,7 +50,7 @@ $(document).ready(function(){
 <body>
 
 <button>Get JSON data</button>
-<div></div>
+<div id="flows"></div>
 
 </body>
 </html>
