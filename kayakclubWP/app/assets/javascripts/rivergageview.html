@@ -6,55 +6,61 @@
 <script>
 $(document).ready(function(){
   $("button").click(function(){
+    var boulder = new Array();
+    var arkansas = new Array();
+    var clearCreek = new Array();
+    var goreCanyon = new Array();
+    var poudre = new Array();
+
+    var rivers = new Array();
+
       // BOULDER CREEK
     $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D06730200%26format%3Djson&callback=?',function(result){
-    result = eval(result);
-    $("div").append(result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'] + " ");
-   
-    $("div").append(result['contents']['value']['timeSeries'][0]['variable']['variableName'] + " ");
-   
-    $("div").append(result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'] + "<br> ");
+        result = eval(result);
+        boulder[0] = result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'];
+        boulder[1] = result['contents']['value']['timeSeries'][0]['variable']['variableName'];
+        boulder[2] = result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'];
+        $("div").append(boulder[0]+boulder[1]+boulder[2]+ "<br> ");/**/  
     });
     // ARKANSAS RIVER
     $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D07091200%26format%3Djson&callback=?',function(result){
-    result = eval(result);
-    $("div").append(result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'] + " ");
-   
-    $("div").append(result['contents']['value']['timeSeries'][0]['variable']['variableName'] + " ");
-   
-    $("div").append(result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'] + "<br> ");
+        result = eval(result);
+        arkansas[0] = result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'];
+        arkansas[1] = result['contents']['value']['timeSeries'][0]['variable']['variableName'];
+        arkansas[2] = result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'];
+        $("div").append(arkansas[0]+arkansas[1]+arkansas[2]+ "<br> ");/**/
     });
     // CLEAR CREEK
     $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D06719505%26format%3Djson&callback=?',function(result){
-    result = eval(result);
-    $("div").append(result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'] + " ");
-   
-    $("div").append(result['contents']['value']['timeSeries'][0]['variable']['variableName'] + " ");
-   
-    $("div").append(result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'] + "<br> ");
+        result = eval(result);
+        clearCreek[0] = result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'];
+        clearCreek[1] = result['contents']['value']['timeSeries'][0]['variable']['variableName'];
+        clearCreek[2] = result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'];
+        $("div").append(clearCreek[0]+clearCreek[1]+clearCreek[2]+ "<br> ");/**/
     });
     // GORE CANYON
     $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D09058000%26format%3Djson&callback=?',function(result){
-    result = eval(result);
-    $("div").append(result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'] + " ");
-   
-    $("div").append(result['contents']['value']['timeSeries'][1]['variable']['variableName'] + " ");
-   
-    $("div").append(result['contents']['value']['timeSeries'][1]['values'][0]['value'][0]['value'] + "<br> ");
+        result = eval(result);
+        goreCanyon[0] = result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'];
+        goreCanyon[1] = result['contents']['value']['timeSeries'][1]['variable']['variableName'];
+        goreCanyon[2] = result['contents']['value']['timeSeries'][1]['values'][0]['value'][0]['value'];
+        $("div").append(goreCanyon[0]+goreCanyon[1]+goreCanyon[2]+ "<br> ");/**/
     });
     // POUDRE
     $.getJSON('http://anyorigin.com/get?url=http%3A//waterservices.usgs.gov/nwis/iv/%3Fsites%3D06752260%26format%3Djson&callback=?',function(result){
-    result = eval(result);
-    $("div").append(result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'] + " ");
-   
-    $("div").append(result['contents']['value']['timeSeries'][0]['variable']['variableName'] + " ");
-   
-    $("div").append(result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'] + "<br> ");
+        result = eval(result);
+        poudre[0] = result['contents']['value']['timeSeries'][0]['sourceInfo']['siteName'];
+        poudre[1] = result['contents']['value']['timeSeries'][0]['variable']['variableName'];
+        poudre[2] = result['contents']['value']['timeSeries'][0]['values'][0]['value'][0]['value'];
+        $("div").append(poudre[0]+poudre[1]+poudre[2]+ "<br> ");/**/
     });
   });
 });
 </script>
 </head>
+
+
+
 <body>
 
 <button>Get JSON data</button>
