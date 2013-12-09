@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+		<!--<link type="text/css" rel="stylesheet" href="stylesheet.css"/>-->
+	<%= stylesheet_link_tag "stylesheet" %>
 		<title>University of Colorado Kayak Club</title>
 
 	   	<!-- bjqs.css contains the *essential* css needed for the slider to work -->
@@ -10,10 +11,12 @@
 
 	 <!-- load jQuery and the plugin -->
 	    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<%= javascript_include_tag "rivergageview" %>
 	    <script src="js/bjqs-1.3.min.js"></script>
 	</head>
 	
 	<body>
+<%= image_tag "rails.png" %>
 		<table align="center">
 		<tr>
 			<td>
@@ -67,6 +70,7 @@
   				<td width="10px">
   				<div id="flows">
       			<p>River Flows</p>
+<div id="content1"></div> <div id="content2"></div> <div id="content3"></div> <div id="content4"></div> <div id="content5"></div>
       			</div>
   				</td>
   			</tr>
