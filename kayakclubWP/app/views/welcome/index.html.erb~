@@ -2,13 +2,16 @@
 <html>
 	<head>
 		<!--<link type="text/css" rel="stylesheet" href="stylesheet.css"/>-->
-	<%= stylesheet_link_tag "stylesheet" %>
+		<%= stylesheet_link_tag "stylesheet" %>
+		<%= stylesheet_link_tag "bjqs" %>
+ 		<%= stylesheet_link_tag "demo" %>
 		<title>University of Colorado Kayak Club</title>
 
 	   	<!-- bjqs.css contains the *essential* css needed for the slider to work -->
+<!--
 	    <link rel="stylesheet" href="bjqs.css">
 	    <link rel="stylesheet" href="demo.css">
-
+-->
 	 <!-- load jQuery and the plugin -->
 	    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<%= javascript_include_tag "rivergageview" %>
@@ -39,9 +42,9 @@
 
         		<!-- start Basic Jquery Slider -->
         		<ul class="bjqs">
-          			<li><img src="img/IMG_8348.jpg" title="New Pool Session Times"></li>
-          			<li><img src="img/IMG_9040.jpg" title="See the New Pictures"></li>
-          			<li><img src="img/IMG_9794.jpg" title="Upcoming Trips!"></li>
+          			<li><%= image_tag "pool.png" %></li>
+          			<li><%= image_tag "tripphotos.png" %></li>
+          			<li><%= image_tag "upcomingtrips.png" %></li>
         		</ul>
         		<!-- end Basic jQuery Slider -->
       			</div>
@@ -70,6 +73,7 @@
   				<td width="10px">
   				<div id="flows">
       			<p>River Flows</p>
+<div id="content1"></div> <div id="content2"></div> <div id="content3"></div> <div id="content4"></div> <div id="content5"></div>
       			</div>
   				</td>
   			</tr>
