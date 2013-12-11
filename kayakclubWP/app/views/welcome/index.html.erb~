@@ -13,13 +13,17 @@
 	    <link rel="stylesheet" href="demo.css">
 -->
 	 <!-- load jQuery and the plugin -->
-	    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	
+	<%= javascript_include_tag "http://code.jquery.com/jquery-1.7.1.min.js" %>
+	    <!--<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>-->
 	<%= javascript_include_tag "rivergageview" %>
-	    <script src="js/bjqs-1.3.min.js"></script>
+	    <!--<script src="js/bjqs-1.3.min.js"></script>-->
+	<%= javascript_include_tag "bjqs-1.3.min.js"%>
+	<%= javascript_include_tag "bjqs-1.3.js"%>
 	</head>
 	
 	<body>
-<%= image_tag "rails.png" %>
+
 		<table align="center">
 		<tr>
 			<td>
@@ -78,7 +82,8 @@
   				</td>
   			</tr>
 		</table>
-      <script class="secret-source">
+	     
+	<script class="secret-source">
         jQuery(document).ready(function($) {
 
           $('#banner-fade').bjqs({
